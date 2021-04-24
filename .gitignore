@@ -1,0 +1,7 @@
+# Project exclude paths
+/node_modules/
+/src/index.js
+/.tsbuildinfo.json
+/blue-iris-desktop.iml
+/build/
+/.idea/
