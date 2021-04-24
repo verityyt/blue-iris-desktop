@@ -15,7 +15,21 @@ function createWindow() {
 
     window.setMenuBarVisibility(false)
     window.maximize()
-    window.loadURL("http://192.168.155.17:81/ui3.htm")
+
+    console.log("[TRACE] Reading url.txt...")
+
+    const fs = require("fs")
+    fs.readFile("url.txt", function (err, data) {
+        if (err) {
+            console.log("[ERROR] Reading failed!")
+            console.log("[TRACE] Showing error page...")
+            window.loadFile("src/error.html")
+        } else {
+            console.log("[INFO] Reading was successful!")
+            console.log("[TRACE] Loading url page...")
+            window.loadURL(data.toString())
+        }
+    })
 
 }
 
